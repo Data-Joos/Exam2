@@ -1,0 +1,11 @@
+# -*- MakeFile -*-
+CC=gcc
+CFLAGS= -g -Wall -I.
+
+#define compile-time flags, -g adds debugging information, 
+#-Wall turns on compiler warnings, -I. gcc will look in the current directory
+
+memo: memo.c libmemo.o
+    $(CC) -o memo memo.c libmemo.o $(CFLAGS)
+libmemo.o:
+    $(CC) -c libmemo.c $(CFLAGS)
